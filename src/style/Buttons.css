@@ -1,0 +1,45 @@
+.button {
+    display: inline-block;
+    position: absolute;
+}
+
+.button.circle {
+    padding: 15px;
+    bottom: 4.25em;
+    left: 1.23em;
+    border-radius: 100%;
+}
+
+.button.horizontal {
+    padding: 6px 12px 6px 6px;
+}
+
+.button.horizontal.left {
+    bottom: 3.25em;
+    left: 8.4em;
+}
+
+.button.horizontal.right {
+
+    bottom: 3.25em;
+    left: 10.5em;
+}
+
+.button.vertical {
+    padding: 8px 6px;
+}
+
+.button.vertical.up {
+    bottom: 4.1em;
+    left: 9.625em;
+}
+
+.button.vertical.down {
+    bottom: 2em;
+    left: 9.625em;
+}
+
+.button:hover {
+    background-color: rgba(0, 255, 30, 0.9);
+    cursor: pointer;
+}
