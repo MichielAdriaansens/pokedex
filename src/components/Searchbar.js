@@ -3,10 +3,17 @@ import { useState } from "react";
 function Searchbar({ getPokemonData }) {
     const [userInput, setUserInput] = useState('');
 
+    function getDataCalled() {
+        let value = userInput;
+
+        setUserInput('');
+        getPokemonData(value);
+    }
+
     function keyDownHandler(event) {
         // console.log(userInput);
         if (event.key === 'Enter') {
-            getPokemonData(userInput);
+            getDataCalled();
         }
     }
 
@@ -15,9 +22,10 @@ function Searchbar({ getPokemonData }) {
             <input
                 placeholder='type name or id'
                 onChange={(e) => { setUserInput(e.target.value) }}
+                value={userInput}
                 onKeyDown={keyDownHandler}
             />
-            <button onClick={() => { getPokemonData(userInput) }} >search</button>
+            <button onClick={getDataCalled} >search</button>
         </div>
     );
 }
