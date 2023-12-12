@@ -34,7 +34,9 @@ function App() {
       name = data.name;
 
       images.front = data.sprites.front_default;
-      images.back = data.sprites.back_default;
+      //First check if data contains sprites.back_default. not included with all pokemon
+      data.sprites.back_default ? (images.back = data.sprites.back_default) : (images.back = data.sprites.front_default);
+
       types = data.types[0].type.name;
 
       let flavorTexts = data2.flavor_text_entries.filter((entry => entry.language.name === 'en'));
